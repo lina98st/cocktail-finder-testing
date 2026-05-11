@@ -4,6 +4,10 @@
   src: url('./fonts/Pinyon_Script/PinyonScript-Regular.ttf');
 }
 
+/* ============================= */
+/* BASE */
+/* ============================= */
+
 body {
   background: linear-gradient(135deg, #0f1a14, #132b20, #1b3a2c, #0f1a14);
   background-size: 400% 400%;
@@ -19,11 +23,24 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
 header {
   background: rgba(15, 26, 20, 0.6);
   backdrop-filter: blur(12px);
   padding: 20px;
-  text-align: center;
   border-bottom: 1px solid rgba(46, 125, 87, 0.3);
 }
 
@@ -34,30 +51,38 @@ header h1 {
   margin: 0;
 }
 
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
 
-/* Login */
-.login-button {
-  background: #1f5c3f;
+.btn-cocktail {
+  background-color: #1f5c3f;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  cursor: pointer;
 }
+
+.btn-cocktail:hover,
+.btn-cocktail:focus,
+.btn-cocktail:active {
+  background-color: #174d34;
+  color: white;
+  border: none;
+}
+
+/* ============================= */
+/* USER AVATAR */
+/* ============================= */
 
 .user-avatar {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   object-fit: cover;
 }
 
-/* Modal */
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -76,40 +101,66 @@ header h1 {
   color: #eaf5ef;
 }
 
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* ============================= */
+/* SEARCH INPUT */
+/* ============================= */
 
-.modal-header h5 {
-  margin: 0;
-}
-
-.modal-header button {
-  background: transparent;
-  border: none;
-  color: #eaf5ef;
-  cursor: pointer;
-}
-
-.modal-submit-button {
-  background: #1f5c3f;
-  color: white;
-  border: none;
+.search-input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(31, 92, 63, 0.35);
   border-radius: 8px;
-  padding: 8px 20px;
-  cursor: pointer;
-  width: 100%;
+  color: #eaf5ef;
+  max-width: 400px;
 }
 
-/* Cocktail grid */
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #1f5c3f;
+  color: #eaf5ef;
+  box-shadow: 0 0 0 0.2rem rgba(31, 92, 63, 0.3);
+}
+
+.search-input::placeholder {
+  color: #a7c7b8;
+}
+
+/* ============================= */
+/* FILTER BUTTONS */
+/* ============================= */
+
+.btn-filter {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(31, 92, 63, 0.35);
+  color: #eaf5ef;
+}
+
+.btn-filter:hover,
+.btn-filter:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #1f5c3f;
+  color: #eaf5ef;
+}
+
+.btn-filter.active {
+  background: #1f5c3f;
+  border-color: #1f5c3f;
+  color: white;
+}
+
+/* ============================= */
+/* COCKTAIL GRID */
+/* ============================= */
+
 .cocktail-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   padding: 20px 0;
 }
+
+/* ============================= */
+/* COCKTAIL CARD */
+/* ============================= */
 
 .cocktail-card {
   background: rgba(255, 255, 255, 0.08);
@@ -125,45 +176,18 @@ header h1 {
   box-shadow: 0 0 30px rgba(46, 125, 87, 0.4);
 }
 
-.cocktail-card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
 .cocktail-card h3 {
   color: #eaf5ef;
-  margin: 12px 0 6px;
 }
 
 .cocktail-card p {
   color: #a7c7b8;
 }
 
-.card-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
+/* ============================= */
+/* DETAIL PAGE */
+/* ============================= */
 
-.cocktail-card button {
-  background: #1f5c3f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  cursor: pointer;
-}
-
-/* Delete button */
-.deleteButton {
-  background: linear-gradient(135deg, #7a1f2b, #a52a3a);
-}
-
-.deleteButton:hover {
-  box-shadow: 0 0 15px rgba(165, 42, 58, 0.6);
-}
-
-/* Detail page */
 .detail-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
@@ -172,11 +196,6 @@ header h1 {
   padding: 30px;
   margin: 40px auto;
   max-width: 1000px;
-}
-
-.detail-card img {
-  width: 100%;
-  border-radius: 12px;
 }
 
 .detail-card h2 {
@@ -193,142 +212,45 @@ header h1 {
   padding-bottom: 5px;
 }
 
-/* Buttons */
-.back-button,
-.surpriseButton {
-  background: #1f5c3f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  cursor: pointer;
-}
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 
-.surpriseButton {
-  display: block;
-  margin: 20px auto;
-}
-
-/* Footer */
 .Footer {
-  text-align: center;
-  padding: 20px;
   color: #a7c7b8;
 }
 
 /* ============================= */
-/* MOBILE OPTIMIZATION */
+/* MOBILE */
 /* ============================= */
 
 @media (max-width: 768px) {
-  /* App padding */
   .App {
     padding: 10px;
   }
 
-  /* Header smaller */
   header {
     padding: 15px;
   }
 
   header h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
-  /* Grid -> single column */
   .cocktail-list {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  /* Cards full width & touch friendly */
   .cocktail-card {
     padding: 16px;
   }
 
-  .card-buttons {
-    flex-direction: column;
-  }
-
-  .cocktail-card button {
-    width: 100%;
-  }
-
-  /* Detail page -> column layout */
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6 {
-    width: 100%;
-  }
-
-  /* Buttons larger on mobile */
-  .surpriseButton,
-  .back-button,
-  .modal-submit-button,
-  .login-button {
-    width: 100%;
-  }
-
-  /* Modal responsive */
   .modal-box {
     width: 90%;
   }
 
-  /* Detail image smaller spacing */
   .detail-card {
     padding: 20px;
   }
-}
-
-/* Search */
-.searchInput {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(31, 92, 63, 0.35);
-  border-radius: 8px;
-  padding: 8px 16px;
-  color: #eaf5ef;
-  width: 100%;
-  max-width: 400px;
-  display: block;
-  margin: 20px auto;
-}
-
-.searchInput::placeholder {
-  color: #a7c7b8;
-}
-
-.searchButton {
-  background: #1f5c3f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  cursor: pointer;
-  display: block;
-  margin: 10px auto;
-}
-
-/* Filter buttons */
-.filter-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.filter-button {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(31, 92, 63, 0.35);
-  border-radius: 8px;
-  color: #eaf5ef;
-  padding: 6px 16px;
-  cursor: pointer;
-}
-
-.filter-button.active {
-  background: #1f5c3f;
-  border-color: #1f5c3f;
 }
