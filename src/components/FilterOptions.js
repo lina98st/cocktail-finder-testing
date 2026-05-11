@@ -24,11 +24,11 @@ const FilterOptions = ({ onFilterChange }) => {
     };
 
     return (
-        <div className="filter-options">
+        <div className="d-flex flex-wrap gap-2 justify-content-center my-4">
             {CATEGORIES.map((category) => (
                 <button
                     key={category}
-                    className={`filter-button ${activeCategory === category ? 'active' : ''}`}
+                    className={`btn filter-button ${activeCategory === category ? 'active' : ''}`}
                     onClick={() => handleFilter(category)}
                 >
                     {category}
