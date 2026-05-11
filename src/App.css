@@ -55,15 +55,15 @@ header h1 {
 /* BUTTONS */
 /* ============================= */
 
-.btn-cocktail {
+.btn.btn-cocktail {
   background-color: #1f5c3f;
   color: white;
   border: none;
 }
 
-.btn-cocktail:hover,
-.btn-cocktail:focus,
-.btn-cocktail:active {
+.btn.btn-cocktail:hover,
+.btn.btn-cocktail:focus,
+.btn.btn-cocktail:active {
   background-color: #174d34;
   color: white;
   border: none;
@@ -105,22 +105,21 @@ header h1 {
 /* SEARCH INPUT */
 /* ============================= */
 
-.search-input {
+.form-control.search-input {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(31, 92, 63, 0.35);
-  border-radius: 8px;
   color: #eaf5ef;
   max-width: 400px;
 }
 
-.search-input:focus {
+.form-control.search-input:focus {
   background: rgba(255, 255, 255, 0.12);
   border-color: #1f5c3f;
   color: #eaf5ef;
   box-shadow: 0 0 0 0.2rem rgba(31, 92, 63, 0.3);
 }
 
-.search-input::placeholder {
+.form-control.search-input::placeholder {
   color: #a7c7b8;
 }
 
@@ -128,20 +127,20 @@ header h1 {
 /* FILTER BUTTONS */
 /* ============================= */
 
-.btn-filter {
+.btn.btn-filter {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(31, 92, 63, 0.35);
   color: #eaf5ef;
 }
 
-.btn-filter:hover,
-.btn-filter:focus {
+.btn.btn-filter:hover,
+.btn.btn-filter:focus {
   background: rgba(255, 255, 255, 0.15);
   border-color: #1f5c3f;
   color: #eaf5ef;
 }
 
-.btn-filter.active {
+.btn.btn-filter.active {
   background: #1f5c3f;
   border-color: #1f5c3f;
   color: white;
