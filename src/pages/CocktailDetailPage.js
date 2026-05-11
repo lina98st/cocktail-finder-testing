@@ -37,7 +37,7 @@ const CocktailDetailPage = () => {
                         <p className="mt-3">{cocktail?.strInstructions}</p>
                     </div>
                     <div className="col-md-6">
-                        <button className="btn back-button mb-3" onClick={() => navigate(-1)}>Back</button>
+                        <button className="btn btn-cocktail mb-3" onClick={() => navigate(-1)}>Back</button>
                         <h2>{cocktail?.strDrink}</h2>
                         <h3 className="ingredients-title">Ingredients</h3>
                         {ingredients.map((ingredient) => (
