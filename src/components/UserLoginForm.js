@@ -22,7 +22,7 @@ const UserLoginForm = () => {
             {currentUser ? (
                 <img src={currentUser.avatar} alt="user" className="user-avatar rounded-circle" />
             ) : (
-                <button className="btn login-button" onClick={() => setLoginModalOpen(true)}>
+                <button className="btn btn-cocktail" onClick={() => setLoginModalOpen(true)}>
                     Login
                 </button>
             )}
@@ -55,7 +55,7 @@ const UserLoginForm = () => {
                                             {(msg) => <p className="text-danger small mt-1">{msg}</p>}
                                         </ErrorMessage>
                                     </div>
-                                    <button className="btn modal-submit-button w-100" type="submit">Sign In</button>
+                                    <button className="btn btn-cocktail w-100" type="submit">Sign In</button>
                                 </Form>
                             </Formik>
                         </div>
