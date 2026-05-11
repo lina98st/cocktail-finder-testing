@@ -28,7 +28,7 @@ const FilterOptions = ({ onFilterChange }) => {
             {CATEGORIES.map((category) => (
                 <button
                     key={category}
-                    className={`btn filter-button ${activeCategory === category ? 'active' : ''}`}
+                    className={`btn btn-filter ${activeCategory === category ? 'active' : ''}`}
                     onClick={() => handleFilter(category)}
                 >
                     {category}
