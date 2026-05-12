@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import catAvatar from '../assets/cat-avatar.png';
 import { validateUserLoginForm } from '../utils/validateUserLoginForm';
+import { postLoginData } from '../api/auth';
 
 const UserLoginForm = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
-    const handleLogin = (values) => {
+    const handleLogin = async (values) => {
+            const token = await postLoginData(values.username, values.password);
+    localStorage.setItem('token', token);
         const user = {
             id: Date.now(),
             avatar: catAvatar,
