@@ -1,6 +1,6 @@
 //LOGIN
 async function postLoginData(username, password) {
-    const url = "http://localhost:3001/users/login";
+const url = "https://cocktail-finder-backend.onrender.com/users/login";
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -23,7 +23,7 @@ async function postLoginData(username, password) {
 
 //SIGN UP
 async function postSignupData(firstName, lastName, username, password){
-    const url = "http://localhost:3001/users/signup";
+const url = "https://cocktail-finder-backend.onrender.com/users/signup";
     try {
         const response = await fetch(url, {
             method: "POST",
