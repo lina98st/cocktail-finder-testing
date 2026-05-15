@@ -17,7 +17,8 @@ CocktailFinder is a cocktail discovery app built with React. It integrates the T
 - Delete cocktails from the list
 - Add cocktails to your personal favorites list (requires login)
 - Remove cocktails from your favorites list
-- User authentication with JWT (login and signup)
+- Favorites page to view all saved cocktails
+- User authentication with JWT (login, signup and logout)
 - Login form with client side validation using Formik
 - Glassmorphism UI with animated gradient background
 - Responsive layout
