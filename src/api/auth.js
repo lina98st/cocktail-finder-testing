@@ -1,6 +1,6 @@
 //LOGIN
 async function postLoginData(username, password) {
-const url = "https://cocktail-finder-backend.onrender.com/users/login";
+const url = `${process.env.REACT_APP_API_URL}/users/login`;
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -23,7 +23,7 @@ const url = "https://cocktail-finder-backend.onrender.com/users/login";
 
 //SIGN UP
 async function postSignupData(firstName, lastName, username, password){
-const url = "https://cocktail-finder-backend.onrender.com/users/signup";
+const url = `${process.env.REACT_APP_API_URL}/users/signup`;
     try {
         const response = await fetch(url, {
             method: "POST",

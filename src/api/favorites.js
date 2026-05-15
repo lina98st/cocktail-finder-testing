@@ -1,6 +1,6 @@
 // GET /favorites - fetch all favorites for the current user
 async function getFavorites(token) {
-const url = "https://cocktail-finder-backend.onrender.com/favorites";
+const url = `${process.env.REACT_APP_API_URL}/favorites`;
     try {
         const response = await fetch(url, {
             method: "GET",
@@ -23,7 +23,7 @@ const url = "https://cocktail-finder-backend.onrender.com/favorites";
 
 // POST /favorites/:cocktailId - add a cocktail to the user's favorites
 async function addFavorite(token, cocktailId) {
-const url = `https://cocktail-finder-backend.onrender.com/favorites/${cocktailId}`;
+const url = `${process.env.REACT_APP_API_URL}/favorites/${cocktailId}`;
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -46,7 +46,7 @@ const url = `https://cocktail-finder-backend.onrender.com/favorites/${cocktailId
 
 // DELETE /favorites/:cocktailId - delete a cocktail from user's favorites
 async function deleteFavorite(token, cocktailId) {
-const url = `https://cocktail-finder-backend.onrender.com/favorites/${cocktailId}`;
+const url = `${process.env.REACT_APP_API_URL}/favorites/${cocktailId}`;
     try {
         const response = await fetch(url, {
             method: "DELETE",
