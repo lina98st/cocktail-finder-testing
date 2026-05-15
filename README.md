@@ -15,6 +15,9 @@ CocktailFinder is a cocktail discovery app built with React. It integrates the T
 - Detail view with dynamic ingredient parsing and preparation instructions
 - Surprise Me button to discover a random cocktail
 - Delete cocktails from the list
+- Add cocktails to your personal favorites list (requires login)
+- Remove cocktails from your favorites list
+- User authentication with JWT (login and signup)
 - Login form with client side validation using Formik
 - Glassmorphism UI with animated gradient background
 - Responsive layout
@@ -34,6 +37,10 @@ CocktailFinder is a cocktail discovery app built with React. It integrates the T
 2. Run `npm install`
 3. Run `npm start`
 4. Open [http://localhost:3000](http://localhost:3000)
+
+## Backend
+
+This app connects to a custom REST API built with Node.js, Express, and MongoDB for user authentication and favorites management. See the [backend repository](https://github.com/lina98st/cocktail-finder-backend) for setup instructions.
 
 ## API
 
