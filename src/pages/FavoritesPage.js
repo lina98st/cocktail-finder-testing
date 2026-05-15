@@ -34,7 +34,7 @@ const FavoritesPage = () => {
 
     return (
         <div>
-            <h2>My Favorites</h2>
+        <h2 className="text-white">My Favorites</h2>
         <CocktailList cocktails={favorites} deleteCocktail={() => {}} />
         </div>
     );
