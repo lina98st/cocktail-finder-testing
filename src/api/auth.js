@@ -1,29 +1,29 @@
 //LOGIN
 async function postLoginData(username, password) {
-    const url = "https://localhost:3443/users/login";
+    const url = "http://localhost:3001/users/login";
     try {
         const response = await fetch(url, {
             method: "POST",
             body: JSON.stringify({ username: username, password: password }),
             headers: {
-            "Content-Type": "application/json",
+                "Content-Type": "application/json",
             }
-            });
-        
+        });
+
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
 
         const result = await response.json();
-      return result.token; 
+        return result.token;
     } catch (error) {
-     console.error(error.message)
+        console.error(error.message);
     }
 }
 
 //SIGN UP
-async function postSignupData(username, password, firstName, lastName) {
-    const url = "https://localhost:3443/users/signup";
+async function postSignupData(firstName, lastName, username, password){
+    const url = "http://localhost:3001/users/signup";
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -34,13 +34,13 @@ async function postSignupData(username, password, firstName, lastName) {
         });
 
         if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status}`);
         }
 
         const result = await response.json();
         return result.status;
     } catch (error) {
-        console.error(error.message)
+        console.error(error.message);
     }
 }
 
