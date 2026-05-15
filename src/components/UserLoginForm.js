@@ -36,7 +36,7 @@ const handleLogout = () => {
     return (
         <>
             {currentUser ? (
-                <div>
+                <div className="d-flex align-items-center gap-3">
                 <img src={currentUser.avatar} alt="user" className="user-avatar rounded-circle" />
                <button className="btn btn-cocktail mt-2" onClick={() => handleLogout()}>
                    Logout
