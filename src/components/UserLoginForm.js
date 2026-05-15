@@ -4,6 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import catAvatar from '../assets/cat-avatar.png';
 import { validateUserLoginForm } from '../utils/validateUserLoginForm';
 import { postLoginData, postSignupData } from '../api/auth';
+import { Link } from 'react-router-dom';
 
 const UserLoginForm = () => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -38,12 +39,14 @@ const handleLogout = () => {
             {currentUser ? (
                 <div className="d-flex align-items-center gap-3">
                 <img src={currentUser.avatar} alt="user" className="user-avatar rounded-circle" />
+                <Link to="/favorites" className="btn btn-cocktail">My Favorites</Link>
                <button className="btn btn-cocktail mt-2" onClick={() => handleLogout()}>
                    Logout
                 </button>
                 </div>
             ) : (
                 <button className="btn btn-cocktail" onClick={() => setLoginModalOpen(true)}>
+                   
                     Login
                 </button>
             )}

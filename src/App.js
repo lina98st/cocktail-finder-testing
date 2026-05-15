@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import CocktailDetailPage from './pages/CocktailDetailPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/cocktail/:id' element={<CocktailDetailPage />} />
+                <Route path='/favorites' element={<FavoritesPage />} />
                             </Routes>
             <Footer />
     </div>
