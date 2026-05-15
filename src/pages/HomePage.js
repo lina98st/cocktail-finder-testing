@@ -66,12 +66,13 @@ const HomePage = () => {
     return (
         <>
             <input
-                className="search-input form-control mx-auto my-3"
-                type="text"
-                placeholder="Search cocktails..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
+       className="search-input form-control mx-auto my-3"
+       type="text"
+       placeholder="Search cocktails..."
+       value={searchTerm}
+       onChange={(e) => setSearchTerm(e.target.value)}
+       onKeyDown={(e) => e.key === 'Enter' && fetchCocktail()}
+        />
             <button className="btn btn-cocktail d-block mx-auto mb-2" onClick={fetchCocktail}>Search</button>
             <button className="btn btn-cocktail d-block mx-auto mb-2" onClick={fetchRandomCocktail}>Surprise Cocktail</button>
             <FilterOptions onFilterChange={fetchByCategory} />
