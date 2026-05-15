@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { addFavorite } from '../api/favorites';
@@ -23,7 +24,7 @@ const [isFavorite, setIsFavorite] = useState(false);
           <button className="btn btn-cocktail w-100">Details</button>
         </Link>
         <button className="btn btn-danger flex-fill" onClick={() => deleteCocktail(cocktail.idDrink)}>Delete</button>
-         <button className="btn btn-danger flex-fill" onClick={() => addToFavorite()}>Add Favorit</button>
+         <button className={`btn ${isFavorite ? 'btn-success' : 'btn-danger'} flex-fill`} onClick={() => addToFavorite()}>Add Favorit</button>
       </div>
     </div>
   );
