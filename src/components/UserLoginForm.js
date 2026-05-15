@@ -27,10 +27,21 @@ const UserLoginForm = () => {
         setIsSignup(false);
     };
 
+    //LOGOUT
+const handleLogout = () => {
+    localStorage.removeItem('token');
+    setCurrentUser(null);
+};
+
     return (
         <>
             {currentUser ? (
+                <div>
                 <img src={currentUser.avatar} alt="user" className="user-avatar rounded-circle" />
+               <button className="btn btn-cocktail mt-2" onClick={() => handleLogout()}>
+                   Logout
+                </button>
+                </div>
             ) : (
                 <button className="btn btn-cocktail" onClick={() => setLoginModalOpen(true)}>
                     Login
