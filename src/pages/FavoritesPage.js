@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { getFavorites } from '../api/favorites';
 import CocktailList from '../components/CocktailList';
+import { Link } from 'react-router-dom';
 
 const FavoritesPage = () => {
     const [favorites, setFavorites] = useState([]);
@@ -32,12 +33,13 @@ const FavoritesPage = () => {
     return Promise.all(promises);
 }
 
-    return (
-        <div>
+return (
+    <div>
         <h2 className="text-white">My Favorites</h2>
+        <Link to="/" className="btn btn-cocktail mb-3">Back to Home</Link>
         <CocktailList cocktails={favorites} deleteCocktail={() => {}} />
-        </div>
-    );
+    </div>
+);
 };
 
 export default FavoritesPage;
