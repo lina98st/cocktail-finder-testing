@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import { getFavorites } from '../api/favorites';
 import CocktailList from '../components/CocktailList';
 import { Link } from 'react-router-dom';
+import { getFavorites, deleteFavorite } from '../api/favorites';
 
 const FavoritesPage = () => {
     const [favorites, setFavorites] = useState([]);
@@ -33,11 +33,21 @@ const FavoritesPage = () => {
     return Promise.all(promises);
 }
 
+async function removeFavorite(id) {
+    try {
+        const token = localStorage.getItem('token');
+        await deleteFavorite(token, id);
+        setFavorites(favorites.filter(cocktail => cocktail.idDrink !== id));
+    } catch (error) {
+        console.error('There was an error', error);
+    }
+}
+
 return (
     <div>
         <h2 className="text-white">My Favorites</h2>
         <Link to="/" className="btn btn-cocktail mb-3">Back to Home</Link>
-        <CocktailList cocktails={favorites} deleteCocktail={() => {}} />
+<CocktailList cocktails={favorites} deleteCocktail={removeFavorite} />
     </div>
 );
 };
