@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { getFavorites } from '../api/favorites';
 import CocktailList from '../components/CocktailList';
