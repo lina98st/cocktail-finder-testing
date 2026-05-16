@@ -13,7 +13,7 @@ CocktailFinder is a cocktail discovery app built with React. It integrates the T
 - Search cocktails by name via REST API
 - Filter cocktails by category
 - Detail view with dynamic ingredient parsing and preparation instructions
-- Surprise Me button to discover a random cocktail
+- Surprise Cocktail button to discover a random cocktail
 - Delete cocktails from the list
 - Add cocktails to your personal favorites list (requires login)
 - Remove cocktails from your favorites list
