@@ -47,12 +47,16 @@ const handleLogout = () => {
                    Logout
                 </button>
                 </div>
-            ) : (
+                 ) : (
+                <div className="d-flex gap-2">
                 <button className="btn btn-cocktail" onClick={() => setLoginModalOpen(true)}>
-                   
-                    Login
+                   Login
                 </button>
-            )}
+                <button className="btn btn-cocktail" onClick={() => { setLoginModalOpen(true); setIsSignup(true); }}>
+                   Sign Up
+                </button>
+               </div>
+               )}
 
             {loginModalOpen && createPortal(
                 <div className="modal-overlay">
