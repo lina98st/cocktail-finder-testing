@@ -123,7 +123,7 @@ const handleLogout = () => {
                                             </ErrorMessage>
                                         </div>
                                         <button className="btn btn-cocktail w-100" type="submit" disabled={isLoading}>
-                                            {isLoading ? 'Signing in...' : 'Sign In'}
+                                        {isLoading ? <><span className="spinner-border spinner-border-sm me-2" role="status"></span>Signing in...</> : 'Sign In'}
                                         </button>
                                         <button className="btn btn-cocktail w-100 mt-2" type="button" onClick={() => setIsSignup(true)}>No account yet? Sign up</button>
                                     </Form>
