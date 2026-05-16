@@ -10,8 +10,10 @@ const UserLoginForm = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [loginModalOpen, setLoginModalOpen] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = async (values) => {
+          setIsLoading(true);
         const token = await postLoginData(values.username, values.password);
         localStorage.setItem('token', token);
         const user = {
@@ -21,6 +23,7 @@ const UserLoginForm = () => {
         };
         setCurrentUser(user);
         setLoginModalOpen(false);
+         setIsLoading(false);
     };
 
     const handleSignup = async (values) => {
@@ -119,7 +122,9 @@ const handleLogout = () => {
                                                 {(msg) => <p className="text-danger small mt-1">{msg}</p>}
                                             </ErrorMessage>
                                         </div>
-                                        <button className="btn btn-cocktail w-100" type="submit">Sign In</button>
+                                        <button className="btn btn-cocktail w-100" type="submit" disabled={isLoading}>
+                                            {isLoading ? 'Signing in...' : 'Sign In'}
+                                        </button>
                                         <button className="btn btn-cocktail w-100 mt-2" type="button" onClick={() => setIsSignup(true)}>No account yet? Sign up</button>
                                     </Form>
                                 </Formik>
